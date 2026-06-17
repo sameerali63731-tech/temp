@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PowerSource Auto Parts – Engines & Transmissions For Sale</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root{
+  --red:#e31414;
+  --red2:#c00;
+  --dark:#111;
+  --dark2:#1a1a1a;
+  --dark3:#222;
+  --white:#fff;
+  --light:#f5f5f5;
+  --border:#e0e0e0;
+  --text:#1a1a1a;
+  --muted:#666;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--text)}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* NAV */
+nav{background:var(--dark);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,.5)}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{width:36px;height:36px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.logo-icon i{font-size:20px;color:#fff}
+.logo-name .top{font-size:16px;font-weight:800;color:#fff;letter-spacing:-.3px}
+.logo-name .top span{color:var(--red)}
+.logo-name .bot{font-size:8.5px;font-weight:600;color:#888;letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14px;font-weight:500;color:#ccc;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a.active{color:#fff;font-weight:600}
+.btn-call{display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:6px;transition:background .2s;white-space:nowrap}
+.btn-call:hover{background:var(--red2)}
+.btn-call i{font-size:16px}
+
+/* HERO */
+.hero{background:var(--dark);min-height:480px;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:60px 40px;gap:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(227,20,20,.08) 0%,transparent 70%)}
+.hero-tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.hero h1{font-size:52px;font-weight:900;color:#fff;line-height:1.0;margin-bottom:18px;letter-spacing:-1.5px}
+.hero h1 .red{color:var(--red)}
+.hero-desc{font-size:15px;color:#aaa;line-height:1.7;margin-bottom:22px;max-width:420px}
+.hero-checks{display:flex;align-items:center;gap:22px;margin-bottom:30px;flex-wrap:wrap}
+.hero-check{display:flex;align-items:center;gap:7px;font-size:13px;color:#ccc;font-weight:500}
+.hero-check i{font-size:15px;color:var(--red)}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-red{display:flex;align-items:center;gap:9px;background:var(--red);color:#fff;font-size:14px;font-weight:700;padding:14px 26px;border-radius:6px;transition:background .2s;border:2px solid var(--red)}
+.btn-red:hover{background:var(--red2);border-color:var(--red2)}
+.btn-red i{font-size:17px}
+.btn-outline{display:flex;align-items:center;gap:9px;background:transparent;color:#fff;font-size:14px;font-weight:700;padding:14px 26px;border-radius:6px;border:2px solid #555;transition:all .2s}
+.btn-outline:hover{border-color:#fff}
+.btn-outline i{font-size:17px}
+.hero-right{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-right img{width:100%;max-height:380px;object-fit:contain;filter:drop-shadow(0 20px 40px rgba(0,0,0,.8))}
+.hero-badges{position:absolute;top:10px;right:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:4px 0}
+.hero-badge-item{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
+.hero-badge-item:last-child{border-bottom:none}
+.hbi-icon{width:36px;height:36px;border:1.5px solid rgba(255,255,255,.2);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hbi-icon i{font-size:18px;color:#fff}
+.hbi-text{font-size:11px;font-weight:700;color:#fff;letter-spacing:.5px;line-height:1.3}
+
+/* FEATURES STRIP */
+.features{background:var(--light);display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border)}
+.feat{padding:32px 24px;text-align:center;border-right:1px solid var(--border)}
+.feat:last-child{border-right:none}
+.feat-icon{width:60px;height:60px;border-radius:50%;background:var(--red);margin:0 auto 16px;display:flex;align-items:center;justify-content:center}
+.feat-icon i{font-size:26px;color:#fff}
+.feat h3{font-size:13px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--text);margin-bottom:8px}
+.feat p{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* INVENTORY */
+.inventory{background:var(--dark2);padding:56px 40px}
+.inv-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.inv-title{font-size:24px;font-weight:800;color:#fff}
+.inv-title span{color:var(--red)}
+.btn-view-all{display:flex;align-items:center;gap:8px;background:transparent;border:1.5px solid #444;color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:6px;transition:border-color .2s}
+.btn-view-all:hover{border-color:#888}
+.btn-view-all i{font-size:15px}
+.inv-slider{position:relative}
+.inv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.inv-card{background:#fff;border-radius:10px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.inv-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.4)}
+.inv-img{height:160px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:12px}
+.inv-img img{width:100%;height:100%;object-fit:contain;transition:transform .3s}
+.inv-card:hover .inv-img img{transform:scale(1.06)}
+.inv-body{padding:16px}
+.inv-body h3{font-size:15px;font-weight:700;color:var(--text);margin-bottom:3px}
+.inv-body .make{font-size:12px;color:var(--muted);margin-bottom:8px}
+.inv-body .price{font-size:18px;font-weight:800;color:var(--red);margin-bottom:14px}
+.btn-details{display:block;width:100%;background:var(--red);color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;padding:10px;border-radius:5px;text-align:center;border:none;cursor:pointer;transition:background .2s}
+.btn-details:hover{background:var(--red2)}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;transition:background .2s;z-index:2}
+.slider-arrow:hover{background:rgba(255,255,255,.2)}
+.slider-arrow i{font-size:20px}
+.arr-left{left:-20px}
+.arr-right{right:-20px}
+
+/* WHY */
+.why{background:#fff;padding:48px 40px;text-align:center}
+.why-tag{font-size:14px;font-weight:800;letter-spacing:.5px;margin-bottom:32px}
+.why-tag span{color:var(--red)}
+.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;max-width:1000px;margin:0 auto}
+.why-item{display:flex;align-items:center;gap:12px;justify-content:center}
+.why-item i{font-size:30px;color:#666}
+.why-item .wv{font-size:18px;font-weight:800;color:var(--text)}
+.why-item .wl{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* CTA + FORM */
+.cta-form{display:grid;grid-template-columns:1fr 1fr;min-height:320px}
+.cta-left-box{background:var(--red);padding:52px 44px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.cta-left-box::after{content:'';position:absolute;right:-60px;bottom:-60px;width:280px;height:280px;border-radius:50%;background:rgba(0,0,0,.15)}
+.cta-left-box h2{font-size:32px;font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px;position:relative;z-index:1}
+.cta-left-box p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:28px;position:relative;z-index:1}
+.cta-left-box .engine-img{position:absolute;right:-10px;bottom:0;width:260px;opacity:.25;z-index:0}
+.cta-left-box .engine-img img{width:100%;object-fit:contain}
+.btn-call-white{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--red);font-size:14px;font-weight:800;padding:13px 24px;border-radius:6px;transition:opacity .2s;position:relative;z-index:1}
+.btn-call-white:hover{opacity:.9}
+.btn-call-white i{font-size:18px}
+.form-box{background:var(--light);padding:44px 40px}
+.form-box h3{font-size:20px;font-weight:800;color:var(--text);margin-bottom:24px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-box input,.form-box select{width:100%;background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:12px 14px;font-size:13px;font-family:'Inter',sans-serif;color:var(--text);outline:none;transition:border-color .2s}
+.form-box input:focus,.form-box select:focus{border-color:var(--red)}
+.form-box input::placeholder{color:#aaa}
+.full{grid-column:1/-1}
+.btn-quote{display:block;width:100%;background:var(--red);color:#fff;font-size:14px;font-weight:800;letter-spacing:.5px;padding:14px;border-radius:6px;border:none;cursor:pointer;transition:background .2s;margin-top:4px}
+.btn-quote:hover{background:var(--red2)}
+.form-note{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-top:10px}
+.form-note i{font-size:14px;color:var(--red)}
+
+/* FOOTER STRIP */
+.footer-strip{background:var(--dark);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #2a2a2a}
+.fs-item{display:flex;align-items:center;gap:12px;padding:22px 24px;border-right:1px solid #2a2a2a}
+.fs-item:last-child{border-right:none}
+.fs-item i{font-size:24px;color:var(--red);flex-shrink:0}
+.fs-text .ft{font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#fff}
+.fs-text .fb{font-size:11px;color:#666;margin-top:2px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:0 18px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:36px 20px}
+  .hero h1{font-size:36px}
+  .hero-right{display:none}
+  .features{grid-template-columns:1fr 1fr}
+  .inventory{padding:36px 20px}
+  .inv-grid{grid-template-columns:1fr 1fr}
+  .why-grid{grid-template-columns:1fr 1fr 1fr}
+  .cta-form{grid-template-columns:1fr}
+  .footer-strip{grid-template-columns:1fr 1fr}
+  .fs-item{border-bottom:1px solid #2a2a2a}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-icon"><i class="ti ti-settings-2"></i></div>
+    <div class="logo-name">
+      <div class="top">Power<span>Source</span></div>
+      <div class="bot">Auto Parts</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#" class="active">Home</a>
+    <a href="#inventory">Engines</a>
+    <a href="#inventory">Transmissions</a>
+    <a href="#why">About Us</a>
+    <a href="#why">Why Us</a>
+    <a href="#">Shipping</a>
+    <a href="#form">Contact</a>
+  </div>
+  <a href="tel:8881234567" class="btn-call"><i class="ti ti-phone"></i> (888) 123-4567</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Premium Quality</div>
+    <h1>ENGINES &amp;<br><span class="red">TRANSMISSIONS</span><br>FOR SALE</h1>
+    <p class="hero-desc">High quality tested engines and transmissions at unbeatable prices. Built to perform. Backed by warranty. Delivered to your door.</p>
+    <div class="hero-checks">
+      <div class="hero-check"><i class="ti ti-shield-check"></i> Quality Tested</div>
+      <div class="hero-check"><i class="ti ti-tag"></i> Low Prices</div>
+      <div class="hero-check"><i class="ti ti-truck"></i> Fast Shipping</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#inventory" class="btn-red"><i class="ti ti-shopping-cart"></i> Shop Engines</a>
+      <a href="#inventory" class="btn-outline"><i class="ti ti-settings-2"></i> Shop Transmissions</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=700&q=85&fit=crop" alt="Engine and Transmission">
+    <div class="hero-badges">
+      <div class="hero-badge-item">
+        <div class="hbi-icon"><i class="ti ti-shield"></i></div>
+        <div class="hbi-text">90 DAYS<br>WARRANTY</div>
+      </div>
+      <div class="hero-badge-item">
+        <div class="hbi-icon"><i class="ti ti-truck"></i></div>
+        <div class="hbi-text">NATIONWIDE<br>SHIPPING</div>
+      </div>
+      <div class="hero-badge-item">
+        <div class="hbi-icon"><i class="ti ti-currency-dollar"></i></div>
+        <div class="hbi-text">MONEY BACK<br>GUARANTEE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="feat">
+    <div class="feat-icon"><i class="ti ti-engine"></i></div>
+    <h3>Quality You Can Trust</h3>
+    <p>Every engine and transmission is inspected and tested for reliability and performance.</p>
+  </div>
+  <div class="feat">
+    <div class="feat-icon"><i class="ti ti-tag"></i></div>
+    <h3>Best Prices</h3>
+    <p>We offer competitive prices without compromising on quality.</p>
+  </div>
+  <div class="feat">
+    <div class="feat-icon"><i class="ti ti-box"></i></div>
+    <h3>Wide Selection</h3>
+    <p>A large inventory of engines and transmissions for foreign and domestic vehicles.</p>
+  </div>
+  <div class="feat">
+    <div class="feat-icon"><i class="ti ti-headset"></i></div>
+    <h3>Expert Support</h3>
+    <p>Our team is here to help you find the right part for your vehicle.</p>
+  </div>
+</div>
+
+<!-- INVENTORY -->
+<section class="inventory" id="inventory">
+  <div class="inv-header">
+    <div class="inv-title"><span>OUR</span> TOP SELLING INVENTORY</div>
+    <a href="#" class="btn-view-all">VIEW ALL INVENTORY <i class="ti ti-arrow-right"></i></a>
+  </div>
+  <div class="inv-slider">
+    <div class="slider-arrow arr-left"><i class="ti ti-chevron-left"></i></div>
+    <div class="inv-grid">
+      <div class="inv-card">
+        <div class="inv-img">
+          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&q=80&fit=crop" alt="5.7L HEMI Engine">
+        </div>
+        <div class="inv-body">
+          <h3>5.7L HEMI Engine</h3>
+          <div class="make">Dodge / Ram</div>
+          <div class="price">$2,199.00</div>
+          <a href="#" class="btn-details">VIEW DETAILS</a>
+        </div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80&fit=crop" alt="6L80E Transmission">
+        </div>
+        <div class="inv-body">
+          <h3>6L80E Transmission</h3>
+          <div class="make">Chevrolet / GMC</div>
+          <div class="price">$1,899.00</div>
+          <a href="#" class="btn-details">VIEW DETAILS</a>
+        </div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-img">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&q=80&fit=crop" alt="3.6L V6 Engine">
+        </div>
+        <div class="inv-body">
+          <h3>3.6L V6 Engine</h3>
+          <div class="make">Chrysler / Dodge</div>
+          <div class="price">$1,749.00</div>
+          <a href="#" class="btn-details">VIEW DETAILS</a>
+        </div>
+      </div>
+      <div class="inv-card">
+        <div class="inv-img">
+          <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?w=400&q=80&fit=crop" alt="4L60E Transmission">
+        </div>
+        <div class="inv-body">
+          <h3>4L60E Transmission</h3>
+          <div class="make">Chevrolet / GMC</div>
+          <div class="price">$1,599.00</div>
+          <a href="#" class="btn-details">VIEW DETAILS</a>
+        </div>
+      </div>
+    </div>
+    <div class="slider-arrow arr-right"><i class="ti ti-chevron-right"></i></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="why-tag">WHY <span>CHOOSE US</span></div>
+  <div class="why-grid">
+    <div class="why-item">
+      <i class="ti ti-settings-2"></i>
+      <div>
+        <div class="wv">10,000+</div>
+        <div class="wl">Happy Customers</div>
+      </div>
+    </div>
+    <div class="why-item">
+      <i class="ti ti-engine"></i>
+      <div>
+        <div class="wv">15,000+</div>
+        <div class="wl">Engines Sold</div>
+      </div>
+    </div>
+    <div class="why-item">
+      <i class="ti ti-shield-check"></i>
+      <div>
+        <div class="wv">90 Days</div>
+        <div class="wl">Warranty</div>
+      </div>
+    </div>
+    <div class="why-item">
+      <i class="ti ti-truck"></i>
+      <div>
+        <div class="wv">Nationwide</div>
+        <div class="wl">Shipping</div>
+      </div>
+    </div>
+    <div class="why-item">
+      <i class="ti ti-headset"></i>
+      <div>
+        <div class="wv">24/7</div>
+        <div class="wl">Support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FORM -->
+<div class="cta-form" id="form">
+  <div class="cta-left-box">
+    <div>
+      <h2>CAN'T FIND WHAT<br>YOU'RE LOOKING FOR?</h2>
+      <p>Contact our experts and we'll help you find the perfect engine or transmission.</p>
+      <a href="tel:8881234567" class="btn-call-white"><i class="ti ti-phone"></i> (888) 123-4567</a>
+    </div>
+    <div class="engine-img">
+      <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&q=60&fit=crop" alt="Engine">
+    </div>
+  </div>
+  <div class="form-box">
+    <h3>GET A QUICK QUOTE</h3>
+    <div class="form-grid">
+      <input type="text" placeholder="Your Name">
+      <input type="tel" placeholder="Phone Number">
+      <input type="text" placeholder="Vehicle Year, Make &amp; Model" class="full">
+      <select class="full">
+        <option value="" disabled selected>Engine or Transmission You Need</option>
+        <option>Engine</option>
+        <option>Transmission</option>
+        <option>Both</option>
+      </select>
+    </div>
+    <button class="btn-quote">GET QUOTE NOW</button>
+    <div class="form-note"><i class="ti ti-circle-check"></i> We typically respond within minutes!</div>
+  </div>
+</div>
+
+<!-- FOOTER STRIP -->
+<div class="footer-strip">
+  <div class="fs-item">
+    <i class="ti ti-shield-check"></i>
+    <div class="fs-text">
+      <div class="ft">Quality Tested</div>
+      <div class="fb">Before Shipping</div>
+    </div>
+  </div>
+  <div class="fs-item">
+    <i class="ti ti-lock"></i>
+    <div class="fs-text">
+      <div class="ft">Secure Payment</div>
+      <div class="fb">100% Safe &amp; Secure</div>
+    </div>
+  </div>
+  <div class="fs-item">
+    <i class="ti ti-refresh"></i>
+    <div class="fs-text">
+      <div class="ft">Easy Returns</div>
+      <div class="fb">Hassle Free</div>
+    </div>
+  </div>
+  <div class="fs-item">
+    <i class="ti ti-truck"></i>
+    <div class="fs-text">
+      <div class="ft">Fast Delivery</div>
+      <div class="fb">Across USA</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
